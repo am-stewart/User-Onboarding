@@ -38,9 +38,10 @@ function App() {
   }
 
   const postNewUser = newUser => {
-    axios.post('https://reqres.in/api/users')
+    axios.post('https://reqres.in/api/users', newUser)
     .then(resp => {
-      setUsers([ ...users, resp.data.data ]);
+      console.log(resp)
+      setUsers([ resp.data, ...users ]);
     }).catch(error => console.log(error))
     .finally(() => setFormValues(initialFormValues))
   }
@@ -77,6 +78,7 @@ function App() {
   useEffect (() => {
     schema.isValid(formValues).then(valid => setDisabled(!valid))
   }, [formValues])
+
 
   return (
     <div className="App">
