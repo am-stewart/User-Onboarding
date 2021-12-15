@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
 export default function Form(props) {
   const { values, submit, change, disabled, errors } = props
-  const [users, setUsers] = useState([])
 
   const onSubmit = event => {
     event.preventDefault()
@@ -22,11 +21,11 @@ export default function Form(props) {
       <div className='form-group inputs'>
         <h2>Add a User</h2>
         
-        <label>Name
+        <label>First Name
           <input
-            value={values.name}
+            value={values.first_name}
             onChange={onChange}
-            name='name'
+            name='first_name'
             type='text'
           />
         </label>
@@ -68,9 +67,8 @@ export default function Form(props) {
       </div>
         
       <div className='submitted users'>
-        <h3>Current Users</h3>
+        <h2>Current Users</h2>
       </div>
-      
     </form>
   )
 }
