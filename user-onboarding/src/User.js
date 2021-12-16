@@ -7,8 +7,9 @@ function User ({ details }) {
 
 return (
   <div className='user container'>
-    <h3>Name: {details.first_name}</h3>
-    <p>Email: {details.email}</p>
+    <h3>{details.first_name}</h3>
+    <p>{details.email}</p>
+    <button id='deleteBtn'>Delete</button>
   </div>
  )
 }
