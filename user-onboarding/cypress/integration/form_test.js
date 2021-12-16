@@ -66,14 +66,26 @@ describe('Filling out the inputs and checkbox and cancelling', () => {
 })
 
 describe('Submitting a new user', () => {
-
     it('can submit a new user', () => {
         nameInput().type('Ben');
         emailInput().type('abc@aol.com');
         passwordInput().type('password');
         termsBox().check();
-        submitBtn().click();    
-    //NEED TO FIGURE OUT HOW TO DELETE THEN TEST
+        submitBtn().click();
+    })
+})
+
+describe('Can check form validation if input is left empty', () => {
+    it('display error messages', () => {
+        nameInput().type('Be').clear();
+        emailInput().type('a').clear();
+        passwordInput().type('p').clear();
+        termsBox().check().uncheck();
+        cy.contains('Name required!');
+        cy.contains('Email address is required')
+        cy.contains('You must choose a password')
+        cy.contains('Must accept terms of service')
+        
     })
 })
 
