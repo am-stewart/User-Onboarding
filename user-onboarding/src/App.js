@@ -82,7 +82,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <Form 
           values={formValues}
           change={inputChange}
@@ -98,7 +97,6 @@ function App() {
             )
           })
         }
-      </header>
     </div>
   );
 }
